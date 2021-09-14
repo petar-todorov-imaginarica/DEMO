@@ -1,12 +1,456 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!--[if !mso]><!-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!--<![endif]-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+        <!--[if (gte mso 9)|(IE)]>
+          <style type="text/css">
+              a {text-decoration: none;}
+              table {border-collapse: collapse;}
+              .more-img img { height: 53px; }
+          </style>
+          <![endif]-->
+    </head>
+    <body style="padding: 0;background-color: #ffffff;margin: 0 !important;">
+        <center style="width: 100%;table-layout: fixed;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;">
+            <div style="max-width: 600px;margin: 0 auto;">
+                <!--[if (gte mso 9)|(IE)]>
+                  <table width="600" align="center">
+                  <tr>
+                  <td>
+                  <![endif]-->
+                <table align="center" style="border-spacing: 0;font-family: sans-serif;color: #333333;margin: 0 auto;width: 100%;max-width: 600px;">
+                    <tr>
+                        <td style="padding: 0;">
+                            <img src="{{ absolute_url(asset('build/images/static-images/email/auto/banner.jpg')) }}" width="650" alt="" height="120" style="border: 0;width: 100%;max-width: 600px;height: 100%;vertical-align: bottom;display:inline-block;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0;width: 100%;background: #004534;text-align: left;">
+                            <p style="margin: 0;font-size: 14px;margin-top: 0;margin-bottom: 0;text-align: center;text-transform: uppercase;color: #c0d42f;font-weight: bold;border: 10px solid #004534;">{{ var.headerTitle }}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0;padding-left: 20px;padding-right: 20px;">
+                            <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #333333;">
+                                <tr>
+                                    <td style="padding: 0;width: 100%;text-align: left;">
+                                        <p style="margin: 0;font-size: 16px;font-weight: bold;margin-bottom: 0;color: #595959;margin-top: 25px;">Здравейте, <span style="text-transform: capitalize;">{{ var.clientFirstName|title }}</span>,</p>
+                                        <p style="margin: 0;font-size: 14px;margin-top: 20px;margin-bottom: 20px;line-height: 20px;">{{ var.bodyMailText|raw }}:</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0;padding-left: 20px;padding-right: 20px;">
+                            <table width="100%" align="center" style="border-spacing: 0;font-family: sans-serif;color: #333333;max-width: 450px;border: 3px solid #99bd2f;margin: 0 auto;table-layout: fixed;">
+                                <tr>
+                                    <td>
+                                        <span>&nbsp;</span>
+                                    </td>
+                                    <td>
+                                        <span>&nbsp;</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px;width: 50%;">
+                                        <p style="margin: 0;font-size: 14px;margin-top: 0;margin-bottom: 0;text-align: right;">№ на полица:</p>
+                                    </td>
+                                    <td style="padding: 5px;width: 50%;">
+                                        <p style="margin: 0;font-size: 14px;margin-top: 0;margin-bottom: 0;float: left;">{{ var.policyId }}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px;width: 50%;">
+                                        <p style="margin: 0;font-size: 14px;margin-top: 0;margin-bottom: 0;text-align: right;">Начална дата:</p>
+                                    </td>
+                                    <td style="padding: 5px;width: 50%;">
+                                        <p style="margin: 0;font-size: 14px;margin-top: 0;margin-bottom: 0;float: left;">{{ var.startDate }}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px;width: 50%;">
+                                        <p style="margin: 0;font-size: 14px;margin-top: 0;margin-bottom: 0;text-align: right;">Крайна дата:</p>
+                                    </td>
+                                    <td style="padding: 5px;width: 50%;">
+                                        <p style="margin: 0;font-size: 14px;margin-top: 0;margin-bottom: 0;float: left;">{{ var.endDate }}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px;width: 50%;">
+                                        <p style="margin: 0;font-size: 14px;margin-top: 0;margin-bottom: 0;text-align: right;">Териториална валидност:</p>
+                                    </td>
+                                    <td style="padding: 5px;width: 50%;">
+                                        <p style="margin: 0;font-size: 14px;margin-top: 0;margin-bottom: 0;float: left;">{{ var.territorialValidity }}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px;width: 50%;">
+                                        <p style="margin: 0;font-size: 14px;margin-top: 0;margin-bottom: 0;text-align: right;">Общ брой лица:</p>
+                                    </td>
+                                    <td style="padding: 5px;width: 50%;">
+                                        <p style="margin: 0;font-size: 14px;margin-top: 0;margin-bottom: 0;float: left;">{{ var.totalNumberPersons }}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" style="padding: 5px;width: 50%;">
+                                        <p style="margin: 0;font-size: 14px;margin-top: 0;margin-bottom: 0;text-align: right;">Цел на пътуването:</p>
+                                    </td>
+                                    <td style="padding: 5px;width: 50%;">
+                                        <p style="margin: 0;font-size: 14px;margin-top: 0;margin-bottom: 0;float: left;text-transform: capitalize;">{{ var.purposeTravel }}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" style="padding: 5px;width: 50%;">
+                                        <p style="margin: 0;font-size: 14px;margin-top: 0;margin-bottom: 0;text-align: right;">Вид на покритието и застрахователна сума:</p>
+                                    </td>
+                                    <td style="padding: 5px;width: 50%;">
+                                        <p style="margin: 0;font-size: 14px;margin-top: 0;margin-bottom: 0;float: left;text-transform: capitalize;">{{ var.covers|raw }}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px;width: 50%;">
+                                        <p style="margin: 0;font-size: 14px;margin-top: 0;margin-bottom: 0;text-align: right;">Обща дължима сума:</p>
+                                    </td>
+                                    <td style="padding: 5px;width: 50%;">
+                                        <p style="margin: 0;font-size: 14px;margin-top: 0;margin-bottom: 0;float: left;">{{ var.paymentAmount }} {{ var.currency }}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>&nbsp;</span>
+                                    </td>
+                                    <td>
+                                        <span>&nbsp;</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0;padding-left: 20px;padding-right: 20px;">
+                            <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #333333;">
+                                <tr>
+                                    <td style="padding: 0;width: 100%;text-align: left;line-height: 20px;">
+                                        <p style="margin: 0;font-size: 14px;margin-top: 20px;margin-bottom: 20px;line-height: 20px;">{{ var.secondBodyMailText|raw }}</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0;">
+                            <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #333333;">
+                                <tr>
+                                    <td style="padding: 0;width: 100%;text-align: left;background: #ededed;">
+                                        <p style="margin: 0;font-size: 15px;font-weight: bold;margin-bottom: 0;color: #595959;margin-top: 0;text-transform: uppercase;border: 10px solid #ededed;margin-left: 15px;">Полезни линкове:</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0;text-align: center;font-size: 0;padding-left: 20px;padding-right: 20px;">
+                            <!--[if (gte mso 9)|(IE)]>
+                            <table width="100%">
+                            <tr>
+                            <td width="50%" valign="top">
+                            <![endif]-->
+                            <div style="width: 100%;max-width: 280px;display: inline-block;vertical-align: top;">
+                                <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #333333;">
+                                    <tr>
+                                        <td style="padding: 0;">
+                                            <table style="border-spacing: 0;font-family: sans-serif;color: #333333;width: 100%;font-size: 14px;text-align: left;margin-top: 10px;border: 10px solid #fff;">
+                                                <tr>
+                                                    <td style="padding: 0;">
+                                                        <img src="{{ absolute_url(asset('build/images/static-images/email/auto/insurance.jpg')) }}" width="280" alt="" style="border: 0;width: 100%;max-width: 280px;height: 102px;" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 0;">
+                                                        <p style="margin: 0;text-transform: uppercase;font-size: 10px;line-height: 15px;margin-top: 10px;">Пътувайте още по-сигурно. Вземете пълно Каско за Вашия автомобил със специална отстъпка</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 0;">
+                                                        <div>&nbsp;</div>
+                                                        <a href="https://groupama.bg/bg/promotions/promo-auto-insurance-casco-prestige-special-discounts" title="" style="color: #ffffff;text-decoration:none;display: inline-block;border: 8px solid #99bd2f;background: #99bd2f;text-transform: uppercase;font-size: 12px;font-weight: bold;">Виж повече</a>
+                                                        <div>&nbsp;</div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if (gte mso 9)|(IE)]>
+                            </td><td width="50%" valign="top">
+                            <![endif]-->
+                            <div style="width: 100%;max-width: 280px;display: inline-block;vertical-align: top;">
+                                <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #333333;">
+                                    <tr>
+                                        <td style="padding: 0;">
+                                            <table style="border-spacing: 0;font-family: sans-serif;color: #333333;width: 100%;font-size: 14px;text-align: left;margin-top: 10px;border: 10px solid #fff;">
+                                                <tr>
+                                                    <td style="padding: 0;">
+                                                        <img src="{{ absolute_url(asset('build/images/static-images/email/sweethome/rules-home.jpg')) }}" width="280" alt="" style="border: 0;width: 100%;max-width: 280px;height: 102px;" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 0;">
+                                                        <p style="margin: 0;text-transform: uppercase;font-size: 10px;margin-top: 10px;margin-bottom: 5px;">Правила за уреждане на претенции</p>
+                                                        <div>&nbsp;</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 0;">
+                                                        <div>&nbsp;</div>
+                                                        <a href="https://www.groupama.bg/bg/services/claims-rules" title="" style="color: #ffffff;text-decoration: none;display: inline-block;border: 8px solid #99bd2f;background: #99bd2f;text-transform: uppercase;font-size: 12px;font-weight: bold;">Виж повече</a>
+                                                        <div>&nbsp;</div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if (gte mso 9)|(IE)]>
+                            </td>
+                            </tr>
+                            </table>
+                            <![endif]-->
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td style="padding: 0;">
+                            <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #333333;">
+                                <tr>
+                                    <td style="padding: 0;width: 100%;text-align: left;background: #ededed;">
+                                        <p style="margin: 0;font-size: 15px;font-weight: bold;margin-bottom: 0;color: #595959;margin-top: 0;text-transform: uppercase;border: 10px solid #ededed;margin-left: 15px;">Какво още:</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0;text-align: center;font-size: 0;">
+                            <div style="width: 100%;max-width: 580px;display: inline-block;border: 10px solid #fff;">&nbsp;</div>
+                            <!--[if (gte mso 9)|(IE)]>
+                                          <table width="100%">
+                                          <tr>
+                                          <td width="200" valign="top">
+                                          <![endif]-->
+                            <div style="width: 100%;max-width: 200px;display: inline-block;vertical-align: top;">
+                                <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #333333;">
+                                    <tr>
+                                        <td style="padding: 0;">
+                                            <table style="border-spacing: 0;color: #333333;font-family: sans-serif;width: 100%;font-size: 14px;text-align: center;padding: 10px;">
+                                                <tr>
+                                                    <td class="more-img" style="padding: 0;">
+                                                        <img src="https://petar-todorov-imaginarica.github.io/DEMO/images/gift.png" width="54" height="53" alt="" style="border: 0;width: 100%;max-width: 60px;height: 53px;" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 0;">
+                                                        <div>&nbsp;</div>
+                                                        <a href="https://www.groupama.bg/bg/promotions" style="color:#333333; text-decoration:none;text-transform: uppercase;font-size: 10px;display: inline-block;line-height: 15px;">Вижте всички актуални промоции от Групама</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if (gte mso 9)|(IE)]>
+                                          </td><td width="200" valign="top">
+                                          <![endif]-->
+                            <div style="width: 100%;max-width: 200px;display: inline-block;vertical-align: top;">
+                                <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #333333;">
+                                    <tr>
+                                        <td style="padding: 0;">
+                                            <table style="border-spacing: 0;color: #333333;font-family: sans-serif;width: 100%;font-size: 14px;text-align: center;padding: 10px;">
+
+                                                <tr>
+                                                    <td class="more-img" style="padding: 0;">
+                                                        <img src="https://petar-todorov-imaginarica.github.io/DEMO/images/test.png" width="40" height="53" alt="" style="border: 0;width: 100%;max-width: 45px;height: 53px;" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 0;">
+                                                        <div>&nbsp;</div>
+                                                        <a href="https://online.groupama.bg/bg/property/sweethome/first" title="" style="color:#333333; text-decoration:none;text-transform: uppercase;font-size: 10px;display: inline-block;line-height: 15px;">Калкулирайте премия за своето имущество и сключете полица онлайн.</a>
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if (gte mso 9)|(IE)]>
+                                          </td><td width="200" valign="top">
+                                          <![endif]-->
+                            <div style="width: 100%;max-width: 200px;display: inline-block;vertical-align: top;">
+                                <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #333333;">
+                                    <tr>
+                                        <td style="padding: 0;">
+                                            <table style="border-spacing: 0;font-family: sans-serif;color: #333333;width: 100%;font-size: 14px;text-align: center;padding: 10px;">
+                                                <tr>
+                                                    <td class="more-img" style="padding: 0;">
+                                                        <img src="https://petar-todorov-imaginarica.github.io/DEMO/images/car.png" width="40" height="53" alt="" style="border: 0;width: 100%;max-width: 45px;height: 53px;" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 0;">
+                                                        <div>&nbsp;</div>
+                                                        <a href="https://online.groupama.bg/bg/auto" title="" style="color:#333333; text-decoration:none;text-transform: uppercase;font-size: 10px;display: inline-block;line-height: 15px;">Калкулирайте премия за своя автомобил и заявете полица в реално време.</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if (gte mso 9)|(IE)]>
+                            </td>
+                            </tr>
+                            </table>
+                            <![endif]-->
+                            <div style="width: 100%;max-width: 580px;display: inline-block;border: 10px solid #fff;">&nbsp;</div>
+                        </td>
+                    </tr>                      
+
+
+                    <tr>
+                        <td style="padding: 0;background: #525252;">
+                            <table width="100%" style="border-spacing: 0;font-family: sans-serif;color: #333333;">
+                                <tr>
+                                    <td style="padding: 0;width: 100%;text-align: left;">
+                                        <p style="margin: 0;font-size: 12px;margin-top: 20px;margin-bottom: 20px;text-align: center;text-transform: uppercase;color: #ffffff;font-weight: bold;padding: 0 20px;">За допълнителна информация, можете да се свържете с нас:</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;font-size: 0;background: #525252;padding: 0;">
+                            <!--[if (gte mso 9)|(IE)]>
+                            <table width="100%">
+                            <tr>
+                            <td width="50%" valign="top">
+                            <![endif]-->
+                            <div style="width: 100%;max-width: 160px;display: inline-block;vertical-align: top;">
+                                <table width="100%">
+                                    <tr>
+                                        <td style="padding: 0;">
+                                            <table style="width: 100%;font-size: 14px;text-align: right;">
+                                                <tr>
+                                                    <td style="padding: 0;">
+                                                        <img src="http://groupama-new.petar.todorov.groupama-v2.imaginarica//build/images/static-images/email/auto/phone.png" width="14" alt="" style="border: 0;width: 100%;max-width: 14px;height: auto;" />
+                                                        <span>&nbsp;</span>
+                                                        <a href="tel:0700 123 32" style="font-weight: bold;color: #969696;vertical-align: top;text-decoration:none;font-size: 12px;">0700 123 32</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if (gte mso 9)|(IE)]>
+                            </td><td width="50%" valign="top">
+                            <![endif]-->
+                            <div style="width: 100%;max-width: 160px;display: inline-block;vertical-align: top;">
+                                <table width="100%">
+                                    <tr>
+                                        <td style="padding: 0;">
+                                            <table style="width: 100%;font-size: 14px;text-align: left;">
+                                                <tr>
+                                                    <td style="padding: 0;">
+                                                        <span>&nbsp;</span>
+                                                        <img src="http://groupama-new.petar.todorov.groupama-v2.imaginarica//build/images/static-images/email/auto/mobile.png" width="14" alt="" style="border: 0;width: 100%;max-width: 14px;height: auto;" />
+                                                        <span>&nbsp;</span>
+                                                        <a href="tel:0035929024813" style="font-weight: bold;color: #969696;vertical-align: top;text-decoration:none;font-size: 12px;">+359 2 90 24 813</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if (gte mso 9)|(IE)]>
+                            </td>
+                            </tr>
+                            </table>
+                            <![endif]-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;font-size: 0;background: #525252;padding: 0;border-bottom: 10px solid #525252;">
+                            <!--[if (gte mso 9)|(IE)]>
+                            <table width="100%">
+                            <tr>
+                            <td width="50%" valign="top">
+                            <![endif]-->
+                            <div style="width: 100%;max-width: 225px;display: inline-block;vertical-align: top;">
+                                <table width="100%">
+                                    <tr>
+                                        <td style="padding: 0;">
+                                            <table style="width: 100%;font-size: 14px;text-align: right;">
+                                                <tr>
+                                                    <td style="padding: 0;">
+                                                        <img src="http://groupama-new.petar.todorov.groupama-v2.imaginarica//build/images/static-images/email/auto/email.png" width="14" alt="" style="border: 0;width: 100%;max-width: 14px;height: auto;" />
+                                                        <span>&nbsp;</span>
+                                                        <a href="mailto:online@groupama.bg" style="font-weight: bold;color: #969696;vertical-align: top;text-decoration:none;font-size: 12px;">online@groupama.bg</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if (gte mso 9)|(IE)]>
+                            </td><td width="50%" valign="top">
+                            <![endif]-->
+                            <div style="width: 100%;max-width: 225px;display: inline-block;vertical-align: top;">
+                                <table width="100%">
+                                    <tr>
+                                        <td style="padding: 0;">
+                                            <table style="width: 100%;font-size: 14px;text-align: left;">
+                                                <tr>
+                                                    <td style="padding: 0;">
+                                                        <span>&nbsp;</span>
+                                                        <img src="{{ absolute_url(asset('build/images/static-images/email/auto/facebook.png')) }}" width="14" alt="" style="border: 0;width: 100%;max-width: 14px;height: auto;" />
+                                                        <span>&nbsp;</span>
+                                                        <a href="https://www.facebook.com/groupamabulgaria" style="font-weight: bold;color: #969696;vertical-align: top;text-decoration:none;font-size: 12px;">/groupamabulgaria</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if (gte mso 9)|(IE)]>
+                            </td>
+                            </tr>
+                            </table>
+                            <![endif]-->
+                        </td>
+                    </tr>
+                </table>
+                <!--[if (gte mso 9)|(IE)]>
+                  </td>
+                  </tr>
+                  </table>
+                  <![endif]-->
+            </div>
+        </center>
+    </body>
 </html>
